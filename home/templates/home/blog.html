@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+{% block title %}Blog{% endblock title %}
+{% block blogactive %}active{% endblock blogactive %}
+{% load static %}
+{% block body %}
+<div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{% static 'home/image/Picture1.jpg' %}" class="card-img" alt="Blog Image">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Blog Title</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu eleifend massa, in vehicula nunc. Nulla facilisi. Sed lacinia nisi ut purus consectetur tempus.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock body %}
+<h1>Blogs</h1>
