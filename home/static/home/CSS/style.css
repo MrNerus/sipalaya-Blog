@@ -1,0 +1,90 @@
+
+
+
+.fullPage {
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.hero {
+    display: block;
+}
+.someInfo {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%);
+}
+.someInfo p {
+    text-align: center;
+    max-width: 80%;
+}
+
+.card {
+    position: relative;
+    width: 25rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -0.5rem -0.5rem 1rem 0px rgba(0,0,0,0.5),
+                0.5rem 0.5rem 1rem 0px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    gap:0.5rem;
+    overflow: hidden;
+    border-radius: 2rem;
+}
+.card:hover {
+    box-shadow: 0.5rem 0.5rem 1rem 0px rgba(0,0,0,0.5),
+                -0.5rem -0.5rem 1rem 0px rgba(0,0,0,0.1);
+}
+.card .coverBG {
+    width: 100%;
+    height: 50%;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%);
+}
+.card .bottomContent {
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+    padding: 5rem 1rem 0 1rem;
+    background: rgb(255,255,255);
+    background: linear-gradient(-90deg, rgba(255,255,255,1) 0%, rgba(210,210,210,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: justify;
+}
+.card img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 9rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.5rem #ffffff;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.card input[type='button'] {
+    background-color: blue;
+    color: white;
+    height: 3rem;
+    width: 100%;
+    border-radius: 1rem;
+    border: none;
+    transition: var(--transition);
+}
+.card input[type='button']:hover {
+    background-color: darkslateblue;
+}

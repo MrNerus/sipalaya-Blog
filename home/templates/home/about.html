@@ -1,4 +1,47 @@
 {% extends 'home/base.html' %}
 {% block title %}about{% endblock title %}
 {% block aboutactive %}active{% endblock aboutactive %}
-<h1>About</h1>
+{% load static %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'home/CSS/style.css' %}">
+<div class="fullPage hero">
+    <div class="someInfo">
+        <h1>About US</h1>
+        <p>There is nothing that you should know about us. Mind your own business please</p>
+    </div>
+    <div class="someInfo">
+        <h1>Lorem, ipsum.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti quo adipisci ad facilis illum quaerat commodi fuga eaque culpa, corporis aut necessitatibus eligendi consectetur rerum nam eum voluptatibus accusantium esse saepe dolores. Culpa ipsum quas consequuntur tempore maxime quidem minus aliquid! Accusantium quod laborum unde nihil quos obcaecati voluptatum.</p>
+    </div>
+</div>
+<div class="fullPage">
+    <div class="card">
+        <div class="coverBG">
+        </div>
+        <img src="{% static 'home/image/potato.jpg' %}" alt="Aalu">
+        <div class="bottomContent">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus cumque recusandae saepe eos aliquam placeat similique deserunt. Nulla, atque debitis?
+            <input type="button" value="View More">
+        </div>
+    </div>
+    <div class="card">
+        <div class="coverBG">
+        </div>
+        <img src="{% static 'home/image/potato.jpg' %}" alt="Aalu">
+        <div class="bottomContent">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus cumque recusandae saepe eos aliquam placeat similique deserunt. Nulla, atque debitis?
+            <input type="button" value="View More">
+        </div>
+    </div>
+    <div class="card">
+        <div class="coverBG">
+        </div>
+        <img src="{% static 'home/image/potato.jpg' %}" alt="Aalu">
+        <div class="bottomContent">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus cumque recusandae saepe eos aliquam placeat similique deserunt. Nulla, atque debitis?
+            <input type="button" value="View More">
+        </div>
+    </div>
+    
+</div>
+{% endblock body %}

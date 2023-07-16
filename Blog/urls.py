@@ -19,6 +19,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from home import views as homeView
+from myBlog import views as myBlogView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -27,4 +28,5 @@ urlpatterns = [
     path("about/", homeView.about, name="about"),
     path("blog/", homeView.blog, name="blog"),
     path("contact/", homeView.contact, name="contact"),
+    path("blogPost/<str:slug>", homeView.blogPost, name="blogPost"),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
