@@ -2,7 +2,16 @@
 {% block title %}Contact{% endblock title %}
 {% block contactactive %}active{% endblock contactactive %}
 {% block body %}
-
+{% if messages %}
+{% for i in messages %}
+    <div class="alert alert-{{ i.tags }} alert-dismissible fade show" role="alert">
+      <strong>Server Says:</strong> {{i.message}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+{% endfor %}
+{% endif %}
 <div class="container">
     <form method="post">
       {% csrf_token %}

@@ -29,4 +29,5 @@ urlpatterns = [
     path("blog/", homeView.blog, name="blog"),
     path("contact/", homeView.contact, name="contact"),
     path("blogPost/<str:slug>", homeView.blogPost, name="blogPost"),
+    path("search/", homeView.search, name="search"),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
