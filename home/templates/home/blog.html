@@ -21,7 +21,7 @@
 </style>
   
   
-  {% for i in allpost %}
+  {% for i in page_obj %}
   <div class="card mb-3">
     <div class="row no-gutters">
       <div class="col-md-4">
@@ -37,5 +37,25 @@
     </div>
   </div>
   {% endfor %}
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
+      {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+      {% endif %}
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{num}}</a></li>
+        {% else %}
+          <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if page_obj.has_next %}
+      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      {% endif %}
+      <li class="page-item"><a class="page-link" href="?page={{ totalPage }}">Last Page</a></li>
+    </ul>
+  </nav>
 {% endblock body %}
 <h1>Blogs</h1>

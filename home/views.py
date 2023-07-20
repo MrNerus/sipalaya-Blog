@@ -2,6 +2,7 @@ from django.shortcuts import render
 from . models import *
 from myBlog.models import *
 from django.contrib import messages
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -12,9 +13,12 @@ def about(request):
     return render(request, "home/about.html")
 
 def blog(request):
-    
     allPost = Post.objects.all()
-    return render(request, 'home/blog.html', {'allpost':allPost})
+    paginator = Paginator(allPost, 1)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    totalPage = paginator.num_pages
+    return render(request, 'home/blog.html', {'page_obj':page_obj, 'totalPage':totalPage})
 
 def blogPost(request, slug):
     post=Post.objects.filter(slug=slug).first()
@@ -42,8 +46,9 @@ def contact(request):
 
 def search(request):
     query = request.GET["q"]
-    data1 = Post.objects.filter(title__icontains=query)
-    data2 = Post.objects.filter(content__icontains=query)
-
-    return render(request, "home/search.html", {"result": data1.union(data2), "query":query})
+    if query != "":
+        data1 = Post.objects.filter(title__icontains=query)
+        data2 = Post.objects.filter(content__icontains=query)
+        return render(request, "home/search.html", {"result": data1.union(data2), "query":query})
+    return blog(request)
 
